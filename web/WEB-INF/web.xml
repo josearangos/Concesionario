@@ -16,6 +16,9 @@
         <servlet-name>saleServlet</servlet-name>
         <servlet-class>com.udea.controller.saleServlet</servlet-class>
     </servlet>
+    
+    
+    
     <servlet-mapping>
         <servlet-name>accountServlet</servlet-name>
         <url-pattern>/accountServlet</url-pattern>
