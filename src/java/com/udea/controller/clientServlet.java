@@ -6,6 +6,7 @@
 package com.udea.controller;
 
 import com.udea.dao.ClientFacadeLocal;
+import com.udea.modelo.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -23,8 +24,6 @@ public class clientServlet extends HttpServlet {
     @EJB
     private ClientFacadeLocal clientFacade;
 
-    
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,17 +36,25 @@ public class clientServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet clientServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet clientServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        try {
+            String action = request.getParameter("action");
+            String url = "presentation/index.jsp";
+            if ("new".equals(action)) {
+                System.out.println("hola mundo");
+                Client c = new Client();
+                c.setId(request.getParameter("id"));
+                c.setName(request.getParameter("name"));
+                c.setLastName(request.getParameter("last_name"));
+                c.setEmail(request.getParameter("email"));
+                //response.sendRedirect(url);                
+                clientFacade.create(c);
+            }
+            response.sendRedirect(url);
+
+        } finally {
+            out.close();
+
         }
     }
 
