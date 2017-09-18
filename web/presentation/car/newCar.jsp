@@ -18,7 +18,7 @@
     </head>
     <body>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
-    <center><form action="../../carServlet?">
+    <center><form action="../../carServlet?action=new" method="post">
             <fieldset>
 
                 <!-- Form Name -->
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="filebutton">Foto</label>
                             <div class="col-md-4">
-                                <input id="filebutton" name="filebutton" class="input-file" type="file">
+                                <input id="examinar" name="filebutton" class="input-file" type="file">
                             </div>
                         </div>
 
@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Matricula</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3"  required pattern="[A-Za-z0-9]+">
+                        <input name="matricula" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3"  required pattern="[A-Za-z0-9]+">
 
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Modelo</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Digite Modelo" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
+                        <input name="modelo" type="text" placeholder="Digite Modelo" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
 
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Marca</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Digite Marca" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
+                        <input name="marca" type="text" placeholder="Digite Marca" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
 
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Precio</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="number" placeholder="Digite Precio" class="form-control input-md" required pattern="[0-9]">
+                        <input name="precio" type="number" placeholder="Digite Precio" class="form-control input-md" required pattern="[0-9]">
 
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <!-- Button -->
                 <div class="form-group">  
                     <div class="col-md-4">
-                        <button id="singlebutton" name="singlebutton" class="btn btn-success" style="font-weight: bold;">Registrar Vehiculo</button>
+                        <input value="Registrar Vehiculo" type="submit" name="action" class="btn btn-success" style="font-weight: bold;">
                     </div>
                 </div>
 

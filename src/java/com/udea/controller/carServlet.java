@@ -6,6 +6,7 @@
 package com.udea.controller;
 
 import com.udea.dao.CarFacadeLocal;
+import com.udea.modelo.Car;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -39,17 +40,22 @@ public class carServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet carServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet carServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        try {
+            String action = request.getParameter("action");
+            String url = "presentation/index.jsp";
+            if ("new".equals(action)) {
+                Car c = new Car();
+                c.setPlate(request.getParameter("matricula"));
+                c.setBrand(request.getParameter("marca"));
+                c.setModel(Integer.parseInt(request.getParameter("modelo")));
+                c.setPrice(Integer.parseInt(request.getParameter("precio")));
+                c.setPhoto("foto");
+                carFacade.create(c);
+            }
+            response.sendRedirect(url);
+        } finally {
+            out.close();
         }
     }
 
