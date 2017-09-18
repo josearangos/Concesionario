@@ -17,7 +17,7 @@
     </head>
     <body>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
-    <center><form>
+    <center><form action="../../clientServlet" method="post">
             <fieldset>
 
                 <!-- Form Name -->
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Nombre</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Digite su Nombre" class="form-control input-md" minlength="1" required pattern="[a-z]">
+                        <input id="textinput" name="textinput" type="text" placeholder="Digite su Nombre" class="form-control input-md" minlength="1" required pattern="[a-z]+">
 
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Apellido</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Digite su Apellido" class="form-control input-md" minlength="1" required pattern="[a-z]">
+                        <input id="textinput" name="textinput" type="text" placeholder="Digite su Apellido" class="form-control input-md" minlength="1" required pattern="[a-z]+">
 
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                 <!-- Button -->
                 <div class="form-group">  
                     <div class="col-md-4">
-                        <button id="singlebutton" name="singlebutton" class="btn btn-success" style="font-weight: bold;">Registrar Cliente</button>
+                        <button id="singlebutton" name="action" class="btn btn-success" style="font-weight: bold;">Registrar Cliente</button>
                     </div>
                 </div>
 
