@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ude.dao;
+package com.udea.dao;
 
-import com.ude.modelo.Account;
+import com.udea.modelo.Sale;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
  * @author josearangos
  */
 @Stateless
-public class AccountFacade extends AbstractFacade<Account> implements AccountFacadeLocal {
+public class SaleFacade extends AbstractFacade<Sale> implements SaleFacadeLocal {
 
     @PersistenceContext(unitName = "concesionarioPU")
     private EntityManager em;
@@ -26,18 +25,8 @@ public class AccountFacade extends AbstractFacade<Account> implements AccountFac
         return em;
     }
 
-    public AccountFacade() {
-        super(Account.class);
+    public SaleFacade() {
+        super(Sale.class);
     }
-
-    @Override
-    public boolean checkLogin(String u, String p) {
-        Query q=em.createQuery("SELECT a FROM Account a WHERE a.userName=:u AND a.password=:p");
-        q.setParameter("u", u);
-        q.setParameter("p",p);
-        return q.getResultList().size()>0;
-    } 
-    
-        
     
 }

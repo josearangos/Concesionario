@@ -5,7 +5,7 @@
  */
 package com.udea.controller;
 
-import com.ude.dao.ClientFacadeLocal;
+import com.udea.dao.ClientFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;

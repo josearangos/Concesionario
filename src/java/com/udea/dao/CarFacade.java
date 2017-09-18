@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ude.dao;
+package com.udea.dao;
 
-import com.ude.modelo.Client;
+import com.udea.modelo.Car;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author josearangos
  */
 @Stateless
-public class ClientFacade extends AbstractFacade<Client> implements ClientFacadeLocal {
+public class CarFacade extends AbstractFacade<Car> implements CarFacadeLocal {
 
     @PersistenceContext(unitName = "concesionarioPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class ClientFacade extends AbstractFacade<Client> implements ClientFacade
         return em;
     }
 
-    public ClientFacade() {
-        super(Client.class);
+    public CarFacade() {
+        super(Car.class);
     }
     
 }

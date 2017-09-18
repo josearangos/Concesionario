@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ude.dao;
+package com.udea.dao;
 
-import com.ude.modelo.Car;
+import com.udea.modelo.Account;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
  * @author josearangos
  */
 @Stateless
-public class CarFacade extends AbstractFacade<Car> implements CarFacadeLocal {
+public class AccountFacade extends AbstractFacade<Account> implements AccountFacadeLocal {
 
     @PersistenceContext(unitName = "concesionarioPU")
     private EntityManager em;
@@ -25,8 +26,18 @@ public class CarFacade extends AbstractFacade<Car> implements CarFacadeLocal {
         return em;
     }
 
-    public CarFacade() {
-        super(Car.class);
+    public AccountFacade() {
+        super(Account.class);
     }
+
+    @Override
+    public boolean checkLogin(String u, String p) {
+        Query q=em.createQuery("SELECT a FROM Account a WHERE a.userName=:u AND a.password=:p");
+        q.setParameter("u", u);
+        q.setParameter("p",p);
+        return q.getResultList().size()>0;
+    } 
+    
+        
     
 }

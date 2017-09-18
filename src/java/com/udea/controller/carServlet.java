@@ -5,7 +5,7 @@
  */
 package com.udea.controller;
 
-import com.ude.dao.CarFacadeLocal;
+import com.udea.dao.CarFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;

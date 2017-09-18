@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ude.dao;
+package com.udea.dao;
 
-import com.ude.modelo.Sale;
+import com.udea.modelo.Sale;
 import java.util.List;
 import javax.ejb.Local;
 
