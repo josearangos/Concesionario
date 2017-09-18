@@ -1,0 +1,46 @@
+body{
+    background: url(http://mymaplist.com/img/parallax/back.png);
+	background-color: #444;
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+.panel-heading{
+	background-color: blue;
+}
+
+.panel-body{
+	background-color: #78909c;
+	font-weight: bold;
+	color: orange;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#video-background {
+	background-color: black;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -100;
+}
+
+.container{
+	opacity: 0.9;	
+}
+
+.panel{
+	margin-top: 30%;
+}
+
+@media only screen and (min-width: 240px) {
+	margin-top: 40%;
+
+}

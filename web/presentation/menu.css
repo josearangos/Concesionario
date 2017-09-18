@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,600,700);
+
+.dad {
+    background: url("http://www.autousp.com/wp-content/uploads/2017/07/Purchasing-A-Used-Car.jpg") center no-repeat;
+}
+
+.grow {
+  padding: 5px 5px 5px 5px;
+  height: 100vh;
+  width: 20vh;
+  float: left;
+  position: relative;
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  text-align: left;
+  overflow: hidden;
+}
+.grow:hover {
+  height: 100vh;
+    width: 50vh;
+  text-align: left;
+}
+
+.tab-title {
+    font-size: 2.5em;
+  color: #fcfcfc;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+.vertical-tab-1 {
+  background: url("http://www.nolamediagroup.com/wp-content/uploads/2016/01/3-steps-to-better-audience-targeting.jpg") right no-repeat;
+}
+
+.vertical-tab-2 {
+  background: url("http://www.esan.edu.pe/apuntes-empresariales/2016/06/28/ventascostos_principal.jpg") center;
+}
+
+.vertical-tab-3 {
+  background: url("http://www.todoautos.com.pe/portal/images/stories/00_Fotos_Noticias/escoge-tu-carro-tipo-vehiculo-1.jpg") center;
+}
+
+.vertical-tab-4 {
+  background: url("http://www.esan.edu.pe/conexion/bloggers/2015/06/19/ventas_online_figura_principal.jpg")center;
+}
+
+.rotate {
+  transform: rotate(-90deg);  
+  -webkit-transform: rotate(-90deg);
+  margin-top: 50vh;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: 400;
+  color: #fff;
+  font-size: 2.25em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 970px) {
+  .rotate {
+    font-size: 1.5em;
+  }
+}
+
+
+@media screen and (max-width: 970px) {
+  .tab-title {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rotate {
+    font-size: 1.125em;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .tab-title {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rotate {
+    font-size: 0.6em;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .tab-title {
+    font-size: 0.75em;
+  }
+}
+
+.rotate{
+  color: orange;
+}
+
+.signature{  
+  color: orange;
+  position: fixed;
+  z-index: 100;
+  font-size: 36px;
+  margin-top: 30%;
+  margin-left: 10%;
+  font-family: 'Gloria Hallelujah', cursive;
+}

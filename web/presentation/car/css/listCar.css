@@ -1,0 +1,30 @@
+body{
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.card img{
+	max-height: 200px;
+	width: 100%;
+}
+
+.card-deck{
+	width: 90%;
+	margin-top: 5%;
+}
+
+.btn{
+	margin: 3%;
+	color: white;
+	font-weight: bold;
+}
+
+legend{
+	margin-top: 10%;
+	padding: .60%;
+	color: white;
+}
+
+.label{
+	width: 100%;
+	background-color: #1565c0;
+}
