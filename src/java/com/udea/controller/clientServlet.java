@@ -10,6 +10,7 @@ import com.udea.modelo.Car;
 import com.udea.modelo.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,25 +42,42 @@ public class clientServlet extends HttpServlet {
         try {
             String action = request.getParameter("action");
             String url = "presentation/index.jsp";
-            if ("new".equals(action)) {
-                Client c = new Client();
-                c.setLastName(request.getParameter("apellido"));
-                c.setId(request.getParameter("ide"));
-                c.setName(request.getParameter("nombre"));
-                c.setLastName(request.getParameter("apellido"));
-                c.setEmail(request.getParameter("correo"));
-                boolean checkId = clientFacade.checkId(c.getId());
-                boolean checkEmail = clientFacade.checkEmail(c.getEmail());
+            switch (action) {
+                case "new":
+                    Client c = new Client();
+                    c.setLastName(request.getParameter("apellido"));
+                    c.setId(request.getParameter("ide"));
+                    c.setName(request.getParameter("nombre"));
+                    c.setLastName(request.getParameter("apellido"));
+                    c.setEmail(request.getParameter("correo"));
+                    boolean checkId = clientFacade.checkId(c.getId());
+                    boolean checkEmail = clientFacade.checkEmail(c.getEmail());
 
-                if (checkId) {
-                    url = "presentation/client/newClient.jsp?res=2";
-                } else if (checkEmail) {
-                    url = "presentation/client/newClient.jsp?res=3";
-                }else{
-                    clientFacade.create(c);
-                    url = "presentation/client/newClient.jsp?res=1";
-                }
+                    if (checkId) {
+                        url = "presentation/client/newClient.jsp?res=2";
+                    } else if (checkEmail) {
+                        url = "presentation/client/newClient.jsp?res=3";
+                    } else {
+                        clientFacade.create(c);
+                        url = "presentation/client/newClient.jsp?res=1";
+                    }
+                    break;
+                case "List":
+                    List<Client> findAll = clientFacade.findAll();
+                    request.getSession().setAttribute("clients", findAll);
+                    url = "presentation/client/searchClient.jsp";
+                    break;
+                case "delete":
+                    String id = request.getParameter("id");
+                    c = clientFacade.find(id);
+                    clientFacade.remove(c);
+                    url = "clientServlet?action=List";                    
+                    break;
+
+                default:
+                    throw new AssertionError();
             }
+
             response.sendRedirect(url);
 
         } finally {

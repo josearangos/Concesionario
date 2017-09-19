@@ -24,9 +24,8 @@
             <script>
                 swal("Usuario creado con exito");
             </script>
-            
-        </c:if>
 
+        </c:if>
         <c:if test="${param.res==2}">
             <script>
                 swal("Ya existe un usuario con ese id");
@@ -86,11 +85,14 @@
                 <div class="form-group">  
                     <div class="col-md-4">
                         <input  value="Registrar Cliente"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
-                    </div>
-                </div>
 
+                    </div>
             </fieldset>
-        </form></center>
+        </form>
+        <form action="../../clientServlet?action=List" method="post">
+            <input  value="Ver clientes"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+        </form>
+    </center>
 
 </body>
 </html>
