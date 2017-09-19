@@ -18,7 +18,7 @@
     </head>
     <body>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
-    <center><form action="../../carServlet?action=new" method="post">
+    <center><form action="../../carServlet?action=new" method="post" enctype="multipart/form-data">
             <fieldset>
 
                 <!-- Form Name -->
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="filebutton">Foto</label>
                             <div class="col-md-4">
-                                <input id="examinar" name="filebutton" class="input-file" type="file">
+                                <input name="fichero" class="input-file" type="file">
                             </div>
                         </div>
 
