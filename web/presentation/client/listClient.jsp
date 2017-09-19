@@ -111,8 +111,8 @@
             <td style="text-align: center"><p>${a.lastName}</p></td>
             <td style="text-align: center"><p>${a.email}</p></td> 
             <td style="text-align: center"><p>
-                <a onclick="return confirm('Esta seguro?')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
-                 </p></td> 
+            <a onclick="return confirm('Esta seguro?')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
+            </p></td> 
         </tr>          
     </c:forEach>
 
