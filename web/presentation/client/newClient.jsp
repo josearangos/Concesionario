@@ -12,22 +12,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/newClient.css">
+        <link rel="stylesheet" type="text/css" href="css/newClient2.css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
     <body>
 
-
         <c:if test="${param.res==1}">
             <script>
-                swal("Usuario creado con exito");
+                swal("Usuario creado con exito !", "Presiona OK", "success");
             </script>
 
         </c:if>
         <c:if test="${param.res==2}">
-            <script>
+            <script>                
                 swal("Ya existe un usuario con ese id");
             </script>
         </c:if>
@@ -39,7 +38,7 @@
         </c:if>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
 
-    <center><form action="../../clientServlet?action=new" method="post">
+    <center><form class ="form1" action="../../clientServlet?action=new" method="post">
             <fieldset>
 
                 <!-- Form Name -->
@@ -88,11 +87,17 @@
 
                     </div>
             </fieldset>
+            
         </form>
-        <form action="../../clientServlet?action=List" method="post">
-            <input  value="Ver clientes"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
-        </form>
-    </center>
+         </center>
+    <center>
+        
+      <form id="form2" action="../../clientServlet?action=List" method="post">
+            <center><input style="margin-right: 10%" value="Ver clientes"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;"></center>
+        </form>  
+    </center>    
+    
+   
 
 </body>
 </html>

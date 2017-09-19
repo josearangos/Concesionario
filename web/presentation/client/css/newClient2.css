@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/09/2017, 05:08:43 PM
+    Author     : josearangos
+*/
+
+body{
+	background-color: #b0bec5;	
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.form1{
+	border-width: 8px;
+	border-radius: 4px;
+	background-color: #607d8b;
+	color: white;
+	max-width: 700px;
+
+}
+
+#form2{
+	border-width: 8px;
+	border-radius: 4px;
+	background-color: #607d8b;
+	color: white;
+	max-width: 700px;
+
+}
+
+
+
+label{
+	float: left;	
+	width: 10%;
+	font-weight: bold;
+}
+
+input{
+	margin-left: 10%;
+	font-weight: bold;
+}
+
+legend{
+	margin-bottom: 5%;
+}
+
+button{
+	margin-top: 15%;
+}

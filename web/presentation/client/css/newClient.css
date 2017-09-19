@@ -6,12 +6,12 @@ body{
 form{
 	border-width: 8px;
 	border-radius: 4px;
-	margin-top: 5%;
 	background-color: #607d8b;
 	color: white;
 	max-width: 700px;
 
 }
+
 
 label{
 	float: left;	
