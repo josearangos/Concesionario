@@ -24,6 +24,7 @@
             <script>
                 swal("Usuario creado con exito");
             </script>
+            
         </c:if>
 
         <c:if test="${param.res==2}">
