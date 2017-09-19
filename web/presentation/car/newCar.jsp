@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="filebutton">Foto</label>
                             <div class="col-md-4">
-                                <input name="fichero" class="input-file" type="file">
+                                <input id="foto" name="foto" class="input-file" type="file">
                             </div>
                         </div>
 

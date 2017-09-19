@@ -7,18 +7,22 @@ package com.udea.controller;
 
 import com.udea.dao.CarFacadeLocal;
 import com.udea.modelo.Car;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author josearangos
  */
+@MultipartConfig
 public class carServlet extends HttpServlet {
 
     @EJB
@@ -50,7 +54,21 @@ public class carServlet extends HttpServlet {
                 c.setBrand(request.getParameter("marca"));
                 c.setModel(Integer.parseInt(request.getParameter("modelo")));
                 c.setPrice(Integer.parseInt(request.getParameter("precio")));
-                c.setPhoto("foto");
+                Part fotoPart = request.getPart("foto");
+                int fotoSize = (int) fotoPart.getSize();
+                byte foto[] = null;
+                
+                if (fotoSize > 0) {
+                    foto = new byte[fotoSize];
+                    try (DataInputStream dis = new DataInputStream(fotoPart.getInputStream())) {
+                        dis.readFully(foto);
+                    }
+                }
+                
+                if (fotoSize > 0){
+                    c.setPhoto(foto);
+                }
+                
                 carFacade.create(c);
             } else if ("list".equals(action)    ) {
              //List cars

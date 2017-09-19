@@ -12,6 +12,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -59,9 +60,10 @@ public class Car implements Serializable {
     private int price;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
+    //@Size(min = 1, max = 100)
     @Column(name = "photo")
-    private String photo;
+    @Lob
+    private byte[] photo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "car1")
     private Collection<Sale> saleCollection;
 
@@ -72,13 +74,23 @@ public class Car implements Serializable {
         this.plate = plate;
     }
 
-    public Car(String plate, String brand, int model, int price, String photo) {
+    public Car(String plate, String brand, int model, int price, byte[] photo) {
         this.plate = plate;
         this.brand = brand;
         this.model = model;
         this.price = price;
         this.photo = photo;
     }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+    
+    
 
     public String getPlate() {
         return plate;
@@ -110,14 +122,6 @@ public class Car implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
 
     @XmlTransient
