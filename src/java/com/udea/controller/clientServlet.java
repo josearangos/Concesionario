@@ -6,6 +6,7 @@
 package com.udea.controller;
 
 import com.udea.dao.ClientFacadeLocal;
+import com.udea.modelo.Car;
 import com.udea.modelo.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,26 +37,35 @@ public class clientServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+
         try {
             String action = request.getParameter("action");
             String url = "presentation/index.jsp";
             if ("new".equals(action)) {
-                System.out.println("hola mundo");
                 Client c = new Client();
-                c.setId(request.getParameter("id"));
-                c.setName(request.getParameter("name"));
-                c.setLastName(request.getParameter("last_name"));
-                c.setEmail(request.getParameter("email"));
-                //response.sendRedirect(url);                
-                clientFacade.create(c);
+                c.setLastName(request.getParameter("apellido"));
+                c.setId(request.getParameter("ide"));
+                c.setName(request.getParameter("nombre"));
+                c.setLastName(request.getParameter("apellido"));
+                c.setEmail(request.getParameter("correo"));
+                boolean checkId = clientFacade.checkId(c.getId());
+                boolean checkEmail = clientFacade.checkEmail(c.getEmail());
+
+                if (checkId) {
+                    url = "presentation/client/newClient.jsp?res=2";
+                } else if (checkEmail) {
+                    url = "presentation/client/newClient.jsp?res=3";
+                }else{
+                    clientFacade.create(c);
+                    url = "presentation/client/newClient.jsp?res=1";
+                }
             }
             response.sendRedirect(url);
 
         } finally {
-            out.close();
 
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

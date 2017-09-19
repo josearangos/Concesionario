@@ -30,4 +30,22 @@ public class ClientFacade extends AbstractFacade<Client> implements ClientFacade
         super(Client.class);
     }
     
+    
+    
+    @Override
+    public boolean checkId(String id) {
+        Query q=em.createQuery("SELECT a FROM Client a WHERE a.id=:id");
+        q.setParameter("id", id);
+        return q.getResultList().size()>0;
+    } 
+    
+     @Override
+     public  boolean checkEmail(String email){
+     Query q=em.createQuery("SELECT a FROM Client a WHERE a.email=:email");
+     q.setParameter("email", email);
+     return q.getResultList().size()>0;
+     
+     }
+
+    
 }

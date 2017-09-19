@@ -30,4 +30,8 @@ public interface ClientFacadeLocal {
 
     int count();
     
+     boolean checkId(String id);
+     
+     boolean checkEmail(String email);
+    
 }

@@ -14,10 +14,31 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/newClient.css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     </head>
     <body>
+
+
+        <c:if test="${param.res==1}">
+            <script>
+                swal("Usuario creado con exito");
+            </script>
+        </c:if>
+
+        <c:if test="${param.res==2}">
+            <script>
+                swal("Ya existe un usuario con ese id");
+            </script>
+        </c:if>
+
+        <c:if test="${param.res==3}">
+            <script>
+                swal("Ya existe un usuario con ese correo");
+            </script>
+        </c:if>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
-    
+
     <center><form action="../../clientServlet?action=new" method="post">
             <fieldset>
 
@@ -28,7 +49,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">ID</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="id" type="text" placeholder="Digite su ID" class="form-control input-md" minlength="9" required pattern="[A-Za-z0-9]+">
+                        <input name="ide"  type="text" placeholder="Digite su ID" class="form-control input-md" minlength="6" maxlength="10" equired pattern="[A-Za-z0-9]+">
 
                     </div>
                 </div>
@@ -37,7 +58,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Nombre</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="name" type="text" placeholder="Digite su Nombre" class="form-control input-md" minlength="1" required pattern="[a-z]+">
+                        <input  name="nombre" type="text" placeholder="Digite su Nombre" class="form-control input-md" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
                     </div>
                 </div>
@@ -46,7 +67,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Apellido</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="last_name" type="text" placeholder="Digite su Apellido" class="form-control input-md" minlength="1" required pattern="[a-z]+">
+                        <input name="apellido"    type="text" placeholder="Digite su Apellido" class="form-control input-md" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
                     </div>
                 </div>
@@ -55,7 +76,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Email</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="email" type="email" placeholder="Digite su Email" class="form-control input-md" required minlength="5">
+                        <input  name="correo" type="email" placeholder="Digite su Email" class="form-control input-md" required minlength="5"  required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
 
                     </div>
                 </div>
@@ -63,7 +84,7 @@
                 <!-- Button -->
                 <div class="form-group">  
                     <div class="col-md-4">
-                        <input id="singlebutton"  type="submit"  name="action" value="Registrar Cliente" class="btn btn-success" style="font-weight: bold;">
+                        <input  value="Registrar Cliente"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
                     </div>
                 </div>
 
