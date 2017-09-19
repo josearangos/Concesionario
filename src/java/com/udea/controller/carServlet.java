@@ -52,6 +52,8 @@ public class carServlet extends HttpServlet {
                 c.setPrice(Integer.parseInt(request.getParameter("precio")));
                 c.setPhoto("foto");
                 carFacade.create(c);
+            } else if ("list".equals(action)    ) {
+             //List cars
             }
             response.sendRedirect(url);
         } finally {
