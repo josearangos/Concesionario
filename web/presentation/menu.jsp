@@ -27,7 +27,7 @@
             <a href=".../clientServlet?action=List"><p class="rotate">Clientes</p></a>
         </div>
         <div class="grow vertical-tab-2">
-          <a href=".../saleServlet?action=listVentas"><p class="rotate">Historial Ventas</p></a>
+          <a href=".../saleServlet?action=listSale"><p class="rotate">Historial Ventas</p></a>
         </div>
         <div class="grow vertical-tab-3">
             <a href=".../carServlet?action=listCars"><p class="rotate">Vehiculos</p></a>

@@ -120,7 +120,8 @@ public class saleServlet extends HttpServlet {
                     List<Sale> sales = saleFacade.findAll();
                     request.getSession().setAttribute("sales", sales);
                     url = "presentation/sale/searchSale.jsp";
-                    break;
+                    break;                    
+                    
 
                 default:
                     throw new AssertionError();

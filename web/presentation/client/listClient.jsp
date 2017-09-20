@@ -28,10 +28,7 @@
         <th class="animated bounceInRight " style="text-align: center">Nombre</th>
         <th class="animated bounceInLeft "style="text-align: center">Apellido</th>
         <th class="animated bounceInRight " style="text-align: center">Email</th>
-          </tr>
-        
-
-        
+        </tr>         
 
     </thead>
     <c:forEach var="a" items="${clients}"> 
