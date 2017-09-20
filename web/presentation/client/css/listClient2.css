@@ -1,4 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/09/2017, 06:23:07 PM
+    Author     : josearangos
+*/
+
 body{ }
+
+#delete{
+   background-color: red;
+   padding: 2%;
+   font-weight: bold;
+   color: white;
+   border-radius: 6px;
+   text-decoration: none;
+}
+
+#delete:hover{
+   background-color: white;
+   color: red;
+}
+
+#edit{
+   background-color: orange;
+   padding: 2%;
+   font-weight: bold;
+   color: white;
+   border-radius: 6px;
+   text-decoration: none;
+}
+
+#edit:hover{
+   background-color: white;
+   color: orange;
+}
 
 @font-face {
     font-family: RadikalW01_Black_bold;

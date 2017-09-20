@@ -28,7 +28,7 @@
         <div class="row row2">
             <div class="col-sm-2">
                 
-                <h1 ><span style="font-size: 20px; font-weight: bold; margin-right: 10%;" class="largenav">CriolloSolutions</span></h1>
+                <h1 ><span style="font-size: 20px; font-weight: bold; margin-right: 10%;" class="largenav">Concesionario</span></h1>
             </div>
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
                 <div class="row">

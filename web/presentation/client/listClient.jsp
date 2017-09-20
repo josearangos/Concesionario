@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" type="text/css" href="css/listClient.css">
+        <link rel="stylesheet" type="text/css" href="css/listClient2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -20,106 +20,31 @@
     <body>
 
         <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-
-
-        <!--
-        <nav  class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container1 container-fluid"> 
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <i class="icon-menu"></i> Menu
-        </button>
-        <a class="navbar-brand" href="#"><span style="font-weight: bold;">CriolloSolutions</span></a>
-        </div>
-        
-        
-         <div class="col-md-8">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        
-        
-        <div class="col-md-12">
-        <form class="form-horizontal form-horizontal_x">
-        <div class="col-md-12">
-            <div class="form-group">
-             
-              <div class="col-sm-2">
-                     <input type="text" class="form-control" id="pwd" placeholder="ID" minlength="9" required pattern="[A-Za-z0-9]+">
-              </div>
-                  
-                  <div class="col-sm-2">          
-                <input type="text" class="form-control" id="pwd" placeholder="Nombre" minlength="1" pattern="[A-Za-z0-9]+">
-              </div>
-                  
-                  <div class="col-sm-2">          
-                <input type="text" class="form-control" id="pwd" placeholder="Apellido" minlength="1" pattern="[A-Za-z0-9]+">
-              </div>
-              <div class="col-sm-2">          
-                <input type="text" class="form-control" id="pwd" placeholder="Email" minlength="5" >
-              </div>
-                  
-                  <div class="col-sm-2" style="width: 3%; margin-right: 5%;">
-                <button type="submit"  class="btn btn-danger">Borrar</button>
-              </div>
-              <div class="col-sm-2">
-                <button type="submit" style="margin-right: 3%;" class="btn btn-warning">Editar</button>
-              </div>
-            </div>
-                </div>
-                
-          </form>
-          </div>
-          
-        </div>
-        </div>
-        
-         
-        </div>
-         
-        </nav>
-        
-        <div class="container" style="margin-top: 5%;">
-            <div class="row">
-        
-        <form class="form-horizontal">
-        <fieldset>
-        
-        -->
-
-
-
-
-
-
-
-
-    <center><legend>Clientes</legend></center>
     <table class="table table-hover"  id="datos" >
         <thead>
-            <tr style="background: #dadada; text-align: center; color: #666; font-weight: bolder; font-size: 15px;">
-                <td colspan="6">Listado De Registros</td></tr>
-        <th></th>
+        <tr style="background: #dadada; text-align: center; color: #666; font-weight: bolder; font-size: 15px;">
+        <th style="text-align: center">ID</th>
+        <th style="text-align: center">Nombre</th>
+        <th style="text-align: center">Apellido</th>
+        <th style="text-align: center">Email</th>
+          </tr>
+        
 
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Email</th>
+        
 
     </thead>
     <c:forEach var="a" items="${clients}"> 
         <tr>
-            <td style="text-align: center">${a.id}</p></td>
+            <td style="text-align: center"><p>${a.id}</p></td>
             <td style="text-align: center"><p>${a.name}</p></td>
             <td style="text-align: center"><p>${a.lastName}</p></td>
             <td style="text-align: center"><p>${a.email}</p></td> 
             <td style="text-align: center"><p>
-            <a onclick="return confirm('Esta seguro que desea eliminar el usuario')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
-            <a onclick=" " href="../../clientServlet?action=edit&id=${a.id}">Editar</a>     
+            <a id="delete" onclick="return confirm('Esta seguro que desea eliminar el usuario')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
+            <a id="edit" onclick="return confirm('Esta seguro que desea editar el usuario') " href="../../clientServlet?action=edit&id=${a.id}">Editar</a>
             </p></td> 
         </tr>          
     </c:forEach>
-
-
 </table>
 </fieldset>
 </form>
