@@ -52,12 +52,16 @@ public class saleServlet extends HttpServlet {
         try {
             String action = request.getParameter("action");
             String url = "presentation/index.jsp";
+            String idClient;
+            String plateCar;
+            boolean checkId;
+            boolean checkPlate;
             switch (action) {
                 case "new":
-                    String idClient = request.getParameter("ide");
-                    String plateCar = request.getParameter("plate");
-                    boolean checkId = clientFacade.checkId(idClient);
-                    boolean checkPlate = carFacade.checkPlate(plateCar);
+                    idClient = request.getParameter("ide");
+                    plateCar = request.getParameter("plate");
+                    checkId = clientFacade.checkId(idClient);
+                    checkPlate = carFacade.checkPlate(plateCar);
                     if (!checkId) {
                         url = "presentation/sale/newSale.jsp?res=1";
                     }else if(!checkPlate){
@@ -78,14 +82,44 @@ public class saleServlet extends HttpServlet {
                     url = "presentation/sale/newSaleUserNotRegistre.jsp";
                     break;
                 case "newSaleUserNotRegistre":
-                    String idNewClient = request.getParameter("ide");
-                    String nameNewClient = request.getParameter("name");
-                    String lastNameNewClient = request.getParameter("lastName");
-                    String emailNewClient = request.getParameter("email");
-                    String plateNewCar = request.getParameter("plate");
+                    idClient = request.getParameter("ide");
+                    String nameClient = request.getParameter("name");
+                    String lastNameClient = request.getParameter("lastName");
+                    String emailClient = request.getParameter("email");
+                    plateCar = request.getParameter("plate");
+                    checkId = clientFacade.checkId(idClient);
+                    checkPlate = carFacade.checkPlate(plateCar);
+                    boolean checkEmail = clientFacade.checkEmail(emailClient);
+                    boolean checkPlateInSale = saleFacade.checkPlate(plateCar);
+                    if (checkId) {
+                        url = "presentation/sale/newSaleUserNotRegistre.jsp?res=1";
+                    }else if(checkEmail){
+                        url = "presentation/sale/newSaleUserNotRegistre.jsp?res=2";
+                    }else if(!checkPlate){
+                        url = "presentation/sale/newSaleUserNotRegistre.jsp?res=3";
+                    }else if(checkPlateInSale){
+                        url = "presentation/sale/newSaleUserNotRegistre.jsp?res=4";
+                    }else{
+                        Client c = new Client();
+                        c.setId(idClient);
+                        c.setName(nameClient);
+                        c.setLastName(lastNameClient);
+                        c.setEmail(emailClient);
+                        clientFacade.create(c);
+                        Car car = carFacade.find(plateCar);
+                        Sale sale = new Sale();
+                        sale.setCar1(car);
+                        sale.setClient1(c);
+                        sale.setSaleDate(new Date());
+                        sale.setSalePK(new SalePK(c.getId(), car.getPlate()));
+                        saleFacade.create(sale);
+                        url = "presentation/sale/newSaleUserNotRegistre.jsp?res=5";
+                    }
                     break;
-                case "delete":
-                                     
+                case "listSale":
+                    List<Sale> sales = saleFacade.findAll();
+                    request.getSession().setAttribute("sales", sales);
+                    url = "presentation/sale/searchSale.jsp";
                     break;
 
                 default:

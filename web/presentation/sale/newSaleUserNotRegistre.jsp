@@ -15,8 +15,38 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href="css/newSaleUserNotRegistre.css">
             <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
+        <c:if test="${param.res==1}">
+            <script>
+                swal("ERROR: Ya existe el cliente, dirijase a las ventas con clientes ya registrados");
+            </script>
+        </c:if>
+            
+        <c:if test="${param.res==2}">
+            <script>
+                swal("ERROR: Ya existe un cliente con ese correo");
+            </script>
+        </c:if>
+
+        <c:if test="${param.res==3}">
+            <script>
+                swal("ERROR: No existe el carro con la placa dada");
+            </script>
+        </c:if>
+           
+        <c:if test="${param.res==4}">
+            <script>
+                swal("Error: Vehiculo no valido, este ya se vendió");
+            </script>
+        </c:if>
+            
+        <c:if test="${param.res==5}">
+            <script>
+                swal("Se ha registrado la venta y el cliente correctamente");
+            </script>
+        </c:if>
         <center>
             <legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend>
         </center>
@@ -53,14 +83,14 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Email</label>  
                   <div class="col-md-4">
-                    <input id="email" name="email" type="email" placeholder="Digite Email" class="form-control input-md" minlength="5" required pattern="[A-Za-z0-9]+">
+                    <input id="email" name="email" type="email" placeholder="Digite Email" class="form-control input-md" minlength="5" required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
                   </div>
                 </div>
                 <!--Matricula del carro comprado-->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="plate">Matricula</label>  
                   <div class="col-md-4">
-                    <input id="plate" name="plate" type="email" placeholder="Digite Matricula" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
+                    <input id="plate" name="plate" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+">
                   </div>
                 </div>
 

@@ -9,6 +9,7 @@ import com.udea.modelo.Sale;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +28,13 @@ public class SaleFacade extends AbstractFacade<Sale> implements SaleFacadeLocal 
 
     public SaleFacade() {
         super(Sale.class);
+    }
+
+    @Override
+    public boolean checkPlate(String car) {
+        Query q=em.createQuery("SELECT s FROM Sale s WHERE s.salePK.car = :car");
+        q.setParameter("car", car);
+        return q.getResultList().size()>0;
     }
     
 }

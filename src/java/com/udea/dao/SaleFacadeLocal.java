@@ -30,4 +30,6 @@ public interface SaleFacadeLocal {
 
     int count();
     
+    boolean checkPlate(String plate);
+    
 }
