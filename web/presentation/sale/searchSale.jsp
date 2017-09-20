@@ -82,8 +82,8 @@
                 </fieldset>
 
             </div>
-        </div>
 
-        <script type="text/javascript" src="searchSale.js"></script>
-    </body>
+        </div>
+        <script type="text/javascript" src="searchSale2.js"></script>
+    </body
 </html>
