@@ -38,17 +38,25 @@ public class accountServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8"); 
         PrintWriter out = response.getWriter();
         try{
-                String url = "index.jsp";
-                String u = request.getParameter("username");
-                String p = request.getParameter("password");
-                boolean checkLogin = accountFacade.checkLogin(u,p);
-                if (checkLogin) {
-                    request.getSession().setAttribute("login", u);
-                    url = "presentation/menu.jsp";
-                }else {
-                    url = "presentation/login.jsp?error=1";
-                }        
-            
+            String action = request.getParameter("action");
+            String url = "presentation/index.jsp";
+            switch(action){
+                case "login":
+                    url = "index.jsp";
+                    String u = request.getParameter("username");
+                    String p = request.getParameter("password");
+                    boolean checkLogin = accountFacade.checkLogin(u,p);
+                    if (checkLogin) {
+                        request.getSession().setAttribute("login", u);
+                        url = "presentation/menu.jsp";
+                    }else {
+                        url = "presentation/login.jsp?error=1";
+                    }        
+                    break;
+                case "redirectListCar":
+                    url = "presentation/car/listCar.jsp";
+                    break;
+            }
             response.sendRedirect(url);            
         }finally{
             out.close();

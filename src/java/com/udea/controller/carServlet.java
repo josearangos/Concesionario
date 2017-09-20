@@ -45,17 +45,22 @@ public class carServlet extends HttpServlet {
         try {
             String action = request.getParameter("action");
             String url = "presentation/index.jsp";
-            if ("new".equals(action)) {
-                Car c = new Car();
-                c.setPlate(request.getParameter("matricula"));
-                c.setBrand(request.getParameter("marca"));
-                c.setModel(Integer.parseInt(request.getParameter("modelo")));
-                c.setPrice(Integer.parseInt(request.getParameter("precio")));
-                c.setPhoto("auto.jpg");
-                carFacade.create(c);
-            } else if ("list".equals(action)    ) {
-             //List cars
+            switch(action){
+                case "new":
+                    Car c = new Car();
+                    c.setPlate(request.getParameter("matricula"));
+                    c.setBrand(request.getParameter("marca"));
+                    c.setModel(Integer.parseInt(request.getParameter("modelo")));
+                    c.setPrice(Integer.parseInt(request.getParameter("precio")));
+                    c.setPhoto("auto.jpg");
+                    carFacade.create(c);
+                    break;
+                case "redirectLogin":
+                    System.out.println("------------------------------------------------------->");
+                    url = "presentation/login.jsp";
+                    break;
             }
+
             response.sendRedirect(url);
         } finally {
             out.close();

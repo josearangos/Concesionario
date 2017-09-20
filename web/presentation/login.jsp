@@ -29,11 +29,14 @@
             <div class="row vertical-offset-100">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default"><center>
-                            <div class="panel-heading" style="background-color: #607d8b">
-                                <h3 class="panel-title" style="color: orange; font-weight: bold;">CriolloSolutions</h3>
+                            <div class="panel-heading" style="background-color: #607d8b; float:left; width: 100%;">
+                                <form action="../accountServlet?action=redirectListCar" method="post">
+                                    <input value="Volver"   type="submit"  name="action"  class="largo btn btn-success" style="font-weight: bold; float: left; background: #FEC957; color: black">
+                                </form>
+                                <h3 class="panel-title" style="color: orange; font-weight: bold; float:left; margin-left: 10%;margin-top: 2vh;">CriolloSolutions</h3>
                             </div>
-                            <div class="panel-body">
-                                <form accept-charset="UTF-8" role="form"  action="../accountServlet" method="post">
+                            <div class="panel-body" style="float:left; width: 100%;">
+                                <form accept-charset="UTF-8" role="form"  action="../accountServlet?action=login" method="post">
                                     <fieldset>
                                         <div class="form-group">
                                             <input class="form-control " style="color: orange;" placeholder="E-mail" name="username" type="text" pattern="[A-Za-z0-9]+" required>
