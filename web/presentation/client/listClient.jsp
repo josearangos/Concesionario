@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="css/listClient.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     </head>
     <body>
 
@@ -106,12 +108,13 @@
     </thead>
     <c:forEach var="a" items="${clients}"> 
         <tr>
-            <td style="text-align: center"><p>${a.id}</p></td>
+            <td style="text-align: center">${a.id}</p></td>
             <td style="text-align: center"><p>${a.name}</p></td>
             <td style="text-align: center"><p>${a.lastName}</p></td>
             <td style="text-align: center"><p>${a.email}</p></td> 
             <td style="text-align: center"><p>
-            <a onclick="return confirm('Esta seguro?')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
+            <a onclick="return confirm('Esta seguro que desea eliminar el usuario')" href="../../clientServlet?action=delete&id=${a.id}">Eliminar</a>     
+            <a onclick=" " href="../../clientServlet?action=edit&id=${a.id}">Editar</a>     
             </p></td> 
         </tr>          
     </c:forEach>
