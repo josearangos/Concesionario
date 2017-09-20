@@ -91,7 +91,7 @@ public class clientServlet extends HttpServlet {
                     c.setLastName(request.getParameter("apellido"));
                     c.setEmail(request.getParameter("correo"));
                     clientFacade.edit(c);
-                     url = "presentation/client/editClient.jsp?res=1";
+                    url = "presentation/client/editClient.jsp?res=1";
                     
                     break;
                 default:

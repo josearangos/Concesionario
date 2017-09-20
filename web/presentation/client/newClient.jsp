@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/newClient2.css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     </head>
     <body>
@@ -36,46 +37,46 @@
                 swal("Ya existe un usuario con ese correo");
             </script>
         </c:if>
-    <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
+    <center><legend class="animated infinite tada"  style="margin-top: 5%; font-size: 45px; color: white;">Concesionario</legend></center>
 
-    <center><form class ="form1" action="../../clientServlet?action=new" method="post">
+    <center><form class ="form1 animated zoomIn" action="../../clientServlet?action=new" method="post">
             <fieldset>
 
                 <!-- Form Name -->
-                <legend>Crear Cliente</legend>
+                <legend class="animated lightSpeedIn" >Crear Cliente</legend>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">ID</label>  
+                    <label class="col-md-4 control-label animated infinite tada" for="textinput">ID</label>  
                     <div class="col-md-4">
-                        <input name="ide"  type="text" placeholder="Digite su ID" class="form-control input-md" minlength="6" maxlength="10" equired pattern="[A-Za-z0-9]+">
+                        <input name="ide"  type="text" placeholder="Digite su ID" class="form-control input-md animated  bounceInRight" minlength="6" maxlength="10" required pattern="[0-9]+">
 
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Nombre</label>  
+                    <label class="col-md-4 control-label animated infinite tada" for="textinput">Nombre</label>  
                     <div class="col-md-4">
-                        <input  name="nombre" type="text" placeholder="Digite su Nombre" class="form-control input-md" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
+                        <input  name="nombre" type="text" placeholder="Digite su Nombre" class="form-control input-md animated  bounceInLeft" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Apellido</label>  
+                    <label class="col-md-4 control-label animated infinite tada" for="textinput">Apellido</label>  
                     <div class="col-md-4">
-                        <input name="apellido"    type="text" placeholder="Digite su Apellido" class="form-control input-md" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
+                        <input name="apellido"    type="text" placeholder="Digite su Apellido" class="form-control input-md animated  bounceInRight" minlength="1" required pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Email</label>  
+                    <label class="col-md-4 control-label animated infinite tada" for="textinput">Email</label>  
                     <div class="col-md-4">
-                        <input  name="correo" type="email" placeholder="Digite su Email" class="form-control input-md" required minlength="5"  required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
+                        <input  name="correo" type="email" placeholder="Digite su Email" class="form-control input-md animated  bounceInLeft" required minlength="5"  required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
 
                     </div>
                 </div>
@@ -83,7 +84,7 @@
                 <!-- Button -->
                 <div class="form-group">  
                     <div class="col-md-4">
-                        <input  value="Registrar Cliente"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+                        <input  value="Registrar Cliente"   type="submit"  name="action"  class="btn btn-success animated  bounceInRight" style="font-weight: bold;">
 
                     </div>
                 </div>
@@ -94,7 +95,7 @@
     <center>
         
       <form id="form2" action="../../clientServlet?action=List" method="post">
-            <center><input style="margin-right: 10%" value="Ver clientes"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;"></center>
+            <center><input style="margin-right: 10%" value="Ver clientes"   type="submit"  name="action"  class="btn btn-success animated  bounceInLeft" style="font-weight: bold;"></center>
         </form>  
     </center>    
     
