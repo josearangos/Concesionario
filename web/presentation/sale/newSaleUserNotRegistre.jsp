@@ -50,8 +50,11 @@
         <center>
             <legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend>
         </center>
+        <form action="../../accountServlet?action=redirectMenu" method="post" style="background: transparent; margin-top: 10px; margin-left: 20%;">
+            <input  value="Menú"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+        </form>
         <center>
-            <form action="../../saleServlet?action=newSaleUserNotRegistre" method="post">
+            <form action="../../saleServlet?action=newSaleUserNotRegistre" method="post" style="margin:2px;">
                 <fieldset>
                 <!-- Form Name -->
                 <legend>Crear Venta</legend>

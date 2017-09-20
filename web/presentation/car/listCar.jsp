@@ -29,7 +29,6 @@
                 <form action="../../carServlet?action=redirectLogin" method="post" style="float:right; margin-right: 3%;">
                     <input value="Login"   type="submit"  name="action"  class="largo btn btn-success" style="font-weight: bold;">
                 </form>
-
             </div>            
         </div>
     </center> 

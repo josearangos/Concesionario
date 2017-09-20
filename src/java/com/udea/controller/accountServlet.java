@@ -53,8 +53,20 @@ public class accountServlet extends HttpServlet {
                         url = "presentation/login.jsp?error=1";
                     }        
                     break;
+                case "redirectClients":
+                    url = "presentation/client/searchClient.jsp";
+                    break;
+                case "redirectHistorySale":
+                    url = "presentation/sale/searchSale.jsp";
+                    break;
                 case "redirectListCar":
                     url = "presentation/car/listCar.jsp";
+                    break;
+                case "redirectSale":
+                    url = "presentation/sale/newSale.jsp";
+                    break;
+                case "redirectMenu":
+                    url = "presentation/menu.jsp";
                     break;
             }
             response.sendRedirect(url);            

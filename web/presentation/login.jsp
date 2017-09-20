@@ -39,10 +39,10 @@
                                 <form accept-charset="UTF-8" role="form"  action="../accountServlet?action=login" method="post">
                                     <fieldset>
                                         <div class="form-group">
-                                            <input class="form-control " style="color: orange;" placeholder="E-mail" name="username" type="text" pattern="[A-Za-z0-9]+" required>
+                                            <input class="form-control " style="color: orange;" placeholder="Usuario" name="username" type="text" pattern="[A-Za-z0-9]+" required>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" style="color: orange;" placeholder="Password" name="password" type="password" value="" required>
+                                            <input class="form-control" style="color: orange;" placeholder="Contraseña" name="password" type="password" value="" required>
                                         </div>
                                         <c:if test="${param.error==1}">
                                             <font color="yellow">Usuario Invalido. Intentelo de nuevo</font>
