@@ -18,7 +18,7 @@
     </head>
     <body>
     <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
-    <center><form action="../../carServlet?action=new" method="post" enctype="multipart/form-data">
+    <center><form action="../../carServlet?action=new" method="post">
             <fieldset>
 
                 <!-- Form Name -->
