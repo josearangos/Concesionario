@@ -86,6 +86,7 @@
                         <input  value="Registrar Cliente"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
 
                     </div>
+                </div>
             </fieldset>
             
         </form>

@@ -72,34 +72,28 @@ public class clientServlet extends HttpServlet {
                     String id = request.getParameter("id");
                     c = clientFacade.find(id);
                     clientFacade.remove(c);
-                    url = "clientServlet?action=List";                    
+                    url = "clientServlet?action=List";
                     break;
 
                 case "edit":
                     id = request.getParameter("id");
                     List<Client> cc = new ArrayList<>();
-                    c = clientFacade.find(id);                 
+                    c = clientFacade.find(id);
                     cc.add(c);
-                    request.getSession().setAttribute("cliente",cc);
+                    request.getSession().setAttribute("cliente", cc);
                     url = "presentation/client/editClient.jsp";
                     break;
-                    
+
                 case "editClient":
                     c = new Client();
-                    c.setLastName(request.getParameter("apellido"));
                     c.setId(request.getParameter("ide"));
                     c.setName(request.getParameter("nombre"));
                     c.setLastName(request.getParameter("apellido"));
                     c.setEmail(request.getParameter("correo"));
-                    //checkEmail = clientFacade.checkEmail(c.getEmail());
-                    //if (checkEmail) {
-                   //     url = "presentation/client/editClient.jsp?res=3";
-                    //}else{
-                    clientFacade.create(c);
-                    url = "presentation/client/editClient.jsp?res=1";
-                    //}
-                    break;    
+                    clientFacade.edit(c);
+                     url = "presentation/client/editClient.jsp?res=1";
                     
+                    break;
                 default:
                     throw new AssertionError();
             }

@@ -22,25 +22,14 @@
     
      <c:if test="${param.res==1}">
             <script>
-                swal("Usuario creado con exito !", "Presiona OK", "success");
+                swal("Usuario modificado con exito !", "Presiona OK", "success");
             </script>
 
         </c:if>
-        <c:if test="${param.res==2}">
-            <script>                
-                swal("Ya existe un usuario con ese id");
-            </script>
-        </c:if>
-
-        <c:if test="${param.res==3}">
-            <script>
-                swal("Ya existe un usuario con ese correo");
-            </script>
-        </c:if>
-	<center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center><center>
-              
-            
-<form class="form1" action="../../clientServlet?action=editClient" method="post" ><fieldset>
+       	<center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center><center>
+                          
+<form class="form1" action="../../clientServlet?action=editClient" method="post" >
+    <fieldset>
         <!-- Form Name -->
         <legend>Modificar Cliente</legend>
       
@@ -50,7 +39,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput">ID</label>  
           <div class="col-md-4">
-              <input name="ide" id="textinput" value="${a.id}" type="text" disabled="true" class="form-control input-md" minlength="9" pattern="[A-Za-z0-9]+">
+              <input name="ide"  value="${a.id}" type="text"  class="form-control input-md" minlength="9" pattern="[A-Za-z0-9]+">
 
           </div>
         </div>
@@ -59,7 +48,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label"  for="textinput">Nombre</label>  
           <div class="col-md-4">
-          <input id="textinput" name="nombre" type="text" value="${a.name}"  class="form-control input-md" minlength="1" pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
+          <input  name="nombre" type="text" value="${a.name}"  class="form-control input-md" minlength="1" pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
           </div>
         </div>
@@ -68,7 +57,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label"  for="textinput" >Apellido</label>  
           <div class="col-md-4">
-          <input id="textinput" name="apellido" value="${a.lastName}"  type="text" class="form-control input-md" minlength="1" pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
+          <input  name="apellido" value="${a.lastName}"  type="text" class="form-control input-md" minlength="1" pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+">
 
           </div>
         </div>
@@ -77,7 +66,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput" >Email</label>  
           <div class="col-md-4">
-          <input id="textinput" name="correo" type="email" value="${a.email}"  minlength="6" class="form-control input-md" required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
+          <input id="textinput" name="correo" type="email" value="${a.email}"   class="form-control input-md" required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">
 
           </div>
         </div>
@@ -85,12 +74,12 @@
         <!-- Button -->
         <div class="form-group">  
           <div class="col-md-4">
-              <input id="singlebutton" type="submit" name="action" class="btn btn-warning" style="font-weight: bold;" value="Guardar Cambios">
+              <input value="Guardar Cambios" type="submit" name="action"  class="btn btn-warning" style="font-weight: bold;" >
           </div>
-        </div>
+       
         </c:forEach>
-        </fieldset>
-    </form>
+     </fieldset>
+</form>
             
    <form id="form" action="../../clientServlet?action=List" method="post">
             <center><input style="margin-right: 10%" value="Ver clientes"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;"></center>

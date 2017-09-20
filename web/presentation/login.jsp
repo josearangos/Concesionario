@@ -13,8 +13,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="login.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <body>
 
@@ -35,7 +36,7 @@
                                 <form accept-charset="UTF-8" role="form"  action="../accountServlet" method="post">
                                     <fieldset>
                                         <div class="form-group">
-                                            <input class="form-control" style="color: orange;" placeholder="E-mail" name="username" type="text" pattern="[A-Za-z0-9]+" required>
+                                            <input class="form-control " style="color: orange;" placeholder="E-mail" name="username" type="text" pattern="[A-Za-z0-9]+" required>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" style="color: orange;" placeholder="Password" name="password" type="password" value="" required>
