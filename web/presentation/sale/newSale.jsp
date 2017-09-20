@@ -65,13 +65,14 @@
                 </div>
                 </fieldset>
             </form>
-            <from action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">
+            <form action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">                          
+                <!--Botón de envio al servidor-->
                 <div class="form-group">  
                   <div class="col-md-4">
-                    <input  value="Venta con nuevo cliente"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+                    <input  value="Venta con Usuario no registrado"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
                   </div>
                 </div>
-            </from>
+            </form>
         </center>
     </body>
 </html>       

@@ -75,8 +75,14 @@ public class saleServlet extends HttpServlet {
                     }
                     break;
                 case "redirectNewSaleUserNotRegistre":
-                    System.out.println("---------------------------------------------");
                     url = "presentation/sale/newSaleUserNotRegistre.jsp";
+                    break;
+                case "newSaleUserNotRegistre":
+                    String idNewClient = request.getParameter("ide");
+                    String nameNewClient = request.getParameter("name");
+                    String lastNameNewClient = request.getParameter("lastName");
+                    String emailNewClient = request.getParameter("email");
+                    String plateNewCar = request.getParameter("plate");
                     break;
                 case "delete":
                                      
