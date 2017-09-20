@@ -60,10 +60,10 @@ public class Car implements Serializable {
     private int price;
     @Basic(optional = false)
     @NotNull
-    //@Size(min = 1, max = 100)
+    @Size(min = 1, max = 100)
     @Column(name = "photo")
     @Lob
-    private byte[] photo;
+    private String photo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "car1")
     private Collection<Sale> saleCollection;
 
@@ -74,7 +74,7 @@ public class Car implements Serializable {
         this.plate = plate;
     }
 
-    public Car(String plate, String brand, int model, int price, byte[] photo) {
+    public Car(String plate, String brand, int model, int price, String photo) {
         this.plate = plate;
         this.brand = brand;
         this.model = model;
@@ -82,16 +82,14 @@ public class Car implements Serializable {
         this.photo = photo;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
     
-    
-
     public String getPlate() {
         return plate;
     }
