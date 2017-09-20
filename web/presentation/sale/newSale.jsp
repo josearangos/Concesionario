@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : newSale
     Created on : 17/09/2017, 10:17:23 PM
@@ -15,6 +16,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/newSale.css">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
@@ -36,23 +38,24 @@
             </script>
         </c:if>
         
-	<center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
+	<center><legend class="animated wobble" style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
 	<center>
             <!-- Form Name -->
-            <legend>Crear Venta</legend>
+            
             <!-- Text input-->
-            <form action="../../saleServlet?action=new" method="post">
+            <form class="animated bounceInDown bounceInLeft form1" action="../../saleServlet?action=new" method="post">
+            <center><legend class="animated bounceInDown fadeInLeft">Crear Cliente</legend></center>
                 <fieldset>
                 <!--ID del cliente-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="ide">ID Cliente</label>  
+                  <label class="col-md-4 control-label animated infinite bounce" for="ide">ID Cliente</label>  
                   <div class="col-md-4">
                     <input id="ide" name="ide" type="text" placeholder="Digite ID" class="form-control input-md" required minlength="9" pattern="[A-Za-z0-9]+">
                   </div>
                 </div>
                 <!--Matricula vehiculo-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="plate">Matricula</label>  
+                  <label class="col-md-4 control-label animated infinite bounce" for="plate">Matricula</label>  
                   <div class="col-md-4">
                     <input id="plate" name="plate" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+"> 
                   </div>
@@ -65,15 +68,14 @@
                 </div>
                 </fieldset>
             </form>
-            <form action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">                          
+            <form class="animated bounceInDown bounceInRight  form2" action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">                          
                 <!--Botón de envio al servidor-->
                 <div class="form-group">  
-                  <div class="col-md-4">
-                    <input  value="Venta con Usuario no registrado"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
-                  </div>
+                  <div class="col-md-4">                    
+                    <input  value="Venta con Usuario no registrado"   type="submit"  name="action"  class="largo btn btn-success" style="font-weight: bold; margin-right: 10%">                  
                 </div>
             </form>
-        </center>
+            </center>
+        
     </body>
 </html>       
-        

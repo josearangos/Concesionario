@@ -21,16 +21,21 @@
 </head>
 <body>
     
-     <c:if test="${param.res==1}">
+    
+<center><legend class="animated  rubberBand" style="margin-top: 5%; font-size: 45px; color: white;">Concensionario</legend></center><center>
+             
+    
+    
+<form class="form1 animated zoomInDown" action="../../clientServlet?action=editClient" method="post" >
+    <fieldset>
+        
+        
+         <c:if test="${param.res==1}">
             <script>
                 swal("Usuario modificado con exito !", "Presiona OK", "success");
             </script>
-
         </c:if>
-<center><legend class="animated  rubberBand" style="margin-top: 5%; font-size: 45px; color: white;">Concensionario</legend></center><center>
-                          
-<form class="form1 animated zoomInDown" action="../../clientServlet?action=editClient" method="post" >
-    <fieldset>
+        
         <!-- Form Name -->
         <legend class="animated  bounceInRight">Modificar Cliente</legend>
       

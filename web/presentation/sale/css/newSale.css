@@ -6,11 +6,9 @@ body{
 form{
 	border-width: 8px;
 	border-radius: 4px;
-	margin-top: 5%;
 	background-color: #546e7a;
 	color: white;
 	max-width: 700px;
-
 }
 
 label{
@@ -20,7 +18,7 @@ label{
 }
 
 input{
-	margin-left: 10%;
+	margin-left: 9%;
 	font-weight: bold;
 }
 
@@ -30,4 +28,19 @@ legend{
 
 button{
 	margin-top: 15%;
+}
+
+.form1{	
+	margin-top: 5%;
+}
+
+.form2{
+	padding-bottom: 3%;
+}
+
+.largo{
+	margin-left: 0;
+	font-size: 14px;
+	height: 50px;
+	width: 239px;
 }

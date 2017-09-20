@@ -1,3 +1,35 @@
+.grow:hover
+{    
+-webkit-transform: scale(1.6);
+-ms-transform: scale(1.6);
+transform: scale(1.6);
+            color: black;
+}
+
+body > .grow
+{           width:483px;
+            height:298px;
+            background:#676470;
+            transition:all 0.3s ease;
+}
+
+.col-xs-11{
+    width:65%;
+}
+
+.shrink:hover
+{
+-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+}
+
+.btn-danger{
+    font-weight: bold;
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+
 #flipkart-navbar {
     background-color: #00695c;
     color: #FFFFFF;

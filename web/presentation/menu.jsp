@@ -16,11 +16,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="menu.css">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">  
 </head>
-<body>  
-    
+<body>      
   <div class="container dad" style="width: 100%; padding: 0;">
        <h1 class="animated infinite bounce"><p class="signature ">Concesionario</p></h1>
     <div class="row" style="float: right;">
@@ -29,18 +27,17 @@
             <a href=".../clientServlet?action=List"><p class="rotate">Clientes</p></a>
         </div>
         <div class="grow vertical-tab-2">
-          <p class="rotate">Historial Ventas</p>
+          <a href=".../saleServlet?action=listVentas"><p class="rotate">Historial Ventas</p></a>
         </div>
         <div class="grow vertical-tab-3">
-          <p class="rotate">Vehiculos</p>
+            <a href=".../carServlet?action=listCars"><p class="rotate">Vehiculos</p></a>
         </div>
         
         <div class="grow vertical-tab-4">
-          <p class="rotate">Generar Venta</p>
+            <a href="sale/newSale.jsp"><p class="rotate">Generar Venta</p></a>
         </div>
     </div>
   </div>
 </div>
-
 </body>
-</html>
+</html>                           
