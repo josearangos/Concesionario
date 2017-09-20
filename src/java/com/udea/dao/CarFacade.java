@@ -9,6 +9,7 @@ import com.udea.modelo.Car;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +28,13 @@ public class CarFacade extends AbstractFacade<Car> implements CarFacadeLocal {
 
     public CarFacade() {
         super(Car.class);
+    }
+
+    @Override
+    public boolean checkPlate(String plate) {
+        Query q=em.createQuery("SELECT c FROM Car c WHERE c.plate=:plate");
+        q.setParameter("plate", plate);
+        return q.getResultList().size()>0;
     }
     
 }

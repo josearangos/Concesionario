@@ -30,4 +30,6 @@ public interface CarFacadeLocal {
 
     int count();
     
+    boolean checkPlate(String id);
+    
 }
