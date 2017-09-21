@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/editCar.css">
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     </head>
     <body>
         <c:if test = "${empty login}">
@@ -23,9 +25,7 @@
                 location.href = "../login.jsp";
             </script>
         </c:if>
-        <form action="../../accountServlet?action=logout" method="post"style="background: transparent; position: absolute; right: 0px;; z-index: 1">
-            <input  value="Salir de sesión"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold; background: #FF6464;">
-        </form>
+            
         <div class="row" style="max-width: 100%">
             <div class="col-md-7" style="margin: 0 auto;">
                 <div class="row">
@@ -44,9 +44,15 @@
                 </div>
             </div>
         </div>
-    <center><form style="margin: 0px;">
-
-
+    <center><form style="margin: 0px;" action="../../carServlet?action=updateCar" method="POST">
+            
+        <c:if test="${param.res==1}">
+            <script>
+                swal("Carro modificado con exito !", "Presiona OK", "success");
+            </script>
+        </c:if>    
+ 
+        <c:forEach var="c" items="${cars}">
             <!-- Form Name -->
             <legend>Modificar Vehiculo</legend>
 
@@ -73,7 +79,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Matricula</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" class="form-control input-md" disabled="true">
+                        <input id="textinput" name="matricula" type="text" value="${c.plate}" class="form-control input-md">
 
                     </div>
                 </div>
@@ -82,7 +88,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Modelo</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text"  class="form-control input-md" disabled="true">
+                        <input id="textinput" name="modelo" type="text" value="${c.model}"  class="form-control input-md">
 
                     </div>
                 </div>
@@ -91,7 +97,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Marca</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text"  class="form-control input-md" disabled="true">
+                        <input id="textinput" name="marca" type="text" value = "${c.brand}" class="form-control input-md">
 
                     </div>
                 </div>
@@ -100,7 +106,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Precio</label>  
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="number" placeholder="Digite Precio" class="form-control input-md" required>
+                        <input id="textinput" name="precio" type="number" value="${c.price}" placeholder="Digite Precio" class="form-control input-md" required>
 
                     </div>
                 </div>
@@ -108,17 +114,14 @@
                 <!-- Button -->
                 <div class="form-group">  
                     <div class="col-md-4">
-                        <button id="singlebutton" name="singlebutton" class="btn btn-success" style="font-weight: bold;">Guardar Cambios</button>
+                        <input value="Guardar Cambios" type="submit" name="action" class="btn btn-success" style="font-weight: bold;">
                     </div>
                 </div>
 
             </fieldset>
+                        </c:forEach>
+
         </form></center>
 
 </body>
 </html>
-
-
-
-
-

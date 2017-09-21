@@ -21,58 +21,39 @@
     <body>
     <center>
         <div class="label">
-            <legend>Lista de Vehiculos</legend>
+            <legend>LISTA DE VEHÍCULOS</legend>
             <br>
             <div style="padding-bottom: 8vh; width: 100%; padding-left: 35%;">
                 <input  style="width: 25%;float: left;"type="text" placeholder="ingrese placa">
                 <button style="float: left">Buscar</button>
-                <form action="../../carServlet?action=redirectLogin" method="post" style="float:right; margin-right: 3%;">
-                    <input value="Login"   type="submit"  name="action"  class="largo btn btn-success" style="font-weight: bold;">
+                
+                <form action="../../carServlet?action=list" method="post" style="float:right; margin-right: 3%;">
+                    <input value="LISTAR" type="submit" name="action" class="btn btn-success" style="font-weight: bold;">
                 </form>
+
             </div>            
         </div>
-    </center> 
-    <center><div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="https://abrilquatrorodas.files.wordpress.com/2017/04/peugeot-208.jpeg?quality=70&strip=info&strip=info" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title"><label>Modelo:</label></h4>
-                    <label>Matricula</label><p class="card-text"></p>
-                    <label>Marca</label><p class="card-text"></p>
-                    <label>Precio</label><p class="card-text"></p>
+    </center>
+
+    <center>
+        <div class="card-deck">
+            <c:forEach var="c" items="${cars}">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><label>${c.brand}</label></h4>
+                        <label>${c.model}</label><p class="card-text"></p>
+                        <label>${c.price}</label><p class="card-text"></p>
+                        <label>${c.plate}</label><p class="card-text"></p> 
+                    </div>
+                    <div class="card-footer">
+                        <a id="edit" href="../../carServlet?action=update&id=${c.plate}" class="btn btn-warning">Editar</a>
+                        <a id="delete" onclick="return confirm('¿Está seguro?')" href="../../carServlet?action=delete&id=${c.plate}" class="btn btn-danger">Borrar</a>
+                    </div>
+                    <hr/>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-danger">Borrar</a>
-                    <a href="#" class="btn btn-warning">Editar</a>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="http://www.elcarrocolombiano.com/wp-content/uploads/2017/03/20170318-TOP-10-CARROS-MAS-VENDIDOS-EN-AMERICA-LATINA-01.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title"><label>Modelo:</label></h4>
-                    <label>Matricula</label><p class="card-text"></p>
-                    <label>Marca</label><p class="card-text"></p>
-                    <label>Precio</label><p class="card-text"></p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-danger">Borrar</a>
-                    <a href="#" class="btn btn-warning">Editar</a>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="http://cdn.gmotors.co.uk/news/wp-content/uploads/2013/03/Kia-KV7-Concept-2-650x416.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title"><label>Modelo:</label></h4>
-                    <label>Matricula</label><p class="card-text"></p>
-                    <label>Marca</label><p class="card-text"></p>
-                    <label>Precio</label><p class="card-text"></p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-danger">Borrar</a>
-                    <a href="#" class="btn btn-warning">Editar</a>
-                </div>
-            </div>
-        </div></center>
+            </c:forEach>
+        </div>
+    </center>    
 
 </body>
 </html>

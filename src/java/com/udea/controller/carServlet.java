@@ -9,9 +9,10 @@ import com.udea.dao.CarFacadeLocal;
 import com.udea.modelo.Car;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,28 +24,14 @@ import javax.servlet.http.HttpServletResponse;
 public class carServlet extends HttpServlet {
 
     @EJB
-    private CarFacadeLocal carFacade;
-
-    
-    
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
-    
+    private CarFacadeLocal carFacade;   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
             String action = request.getParameter("action");
-            String url = "presentation/index.jsp";
+            String url = "presentation/car/listCar.jsp";
             switch(action){
                 case "new":
                     Car c = new Car();
@@ -58,6 +45,41 @@ public class carServlet extends HttpServlet {
                 case "redirectLogin":
                     System.out.println("------------------------------------------------------->");
                     url = "presentation/login.jsp";
+                    break;
+                    
+                case "list":
+                    List<Car> findAll = carFacade.findAll();
+                    request.getSession().setAttribute("cars", findAll);
+                    url = "presentation/car/listCar.jsp";
+                 break;
+                 
+                case "delete":
+                    String id = request.getParameter("id");
+                    Car car = carFacade.find(id);
+                    carFacade.remove(car);
+                    url = "carServlet?action=list";
+                    break;
+                    
+                case "update":
+                    id = request.getParameter("id");
+                    List<Car> lc = new ArrayList<>();
+                    c = carFacade.find(id);
+                    lc.add(c);
+                    request.getSession().setAttribute("cars", lc);
+                    url = "presentation/car/editCar.jsp";
+                    break;
+                    
+                case "updateCar":                    
+                    c = new Car();
+                    c.setPlate(request.getParameter("matricula"));
+                    System.out.println("");
+                    c.setBrand(request.getParameter("marca"));
+                    c.setModel(Integer.parseInt(request.getParameter("modelo")));
+                    c.setPrice(Integer.parseInt(request.getParameter("precio")));
+                    c.setPhoto("hola.jpg");
+                    carFacade.edit(c);
+                    url = "presentation/car/editCar.jsp?res=1";
+                    
                     break;
             }
 
