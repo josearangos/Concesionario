@@ -13,7 +13,9 @@
         <title>Concesionario</title>
     </head>
     <body>
-       <jsp:include page = "car/listCar.jsp"></jsp:include>
+        <script>
+            location.href="car/listCar.jsp";
+        </script>
     </body>
 </html>
 
