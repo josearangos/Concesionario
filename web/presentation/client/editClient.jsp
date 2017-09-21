@@ -26,6 +26,9 @@
                 location.href="../login.jsp";
             </script>
         </c:if>
+    <form action="../../accountServlet?action=logout" method="post"style="background: transparent; position: absolute; right: 0px;; z-index: 1">
+        <input  value="Salir de sesión"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold; background: #FF6464;">
+    </form>
 
     <center><legend class="animated  rubberBand" style="margin-top: 5%; font-size: 45px; color: white;">Concensionario</legend></center><center>
 

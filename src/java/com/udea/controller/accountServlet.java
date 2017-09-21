@@ -53,6 +53,9 @@ public class accountServlet extends HttpServlet {
                         url = "presentation/login.jsp?error=1";
                     }        
                     break;
+                case "logout":
+                    request.getSession().removeAttribute("login");
+                    url = "presentation/login.jsp";
                 case "redirectClients":
                     url = "presentation/client/searchClient.jsp";
                     break;

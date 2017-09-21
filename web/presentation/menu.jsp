@@ -22,12 +22,15 @@
         <c:if test = "${empty login}">
             <script>
                 alert("Debe logearse para acceder a esta funcionalidad");
-                location.href="../login.jsp";
+                location.href="login.jsp";
             </script>
         </c:if>
-        <div class="container dad" style="width: 100%; padding: 0;">
-            <h1 class="animated infinite bounce"><p class="signature ">Concesionario</p></h1>
-            <div class="row" style="float: right;">
+        <form action="../accountServlet?action=logout" method="post"style="background: transparent; position: absolute; right: 0px; z-index: 1">
+            <input  value="Salir de sesión"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold; background: #FF6464;">
+        </form>
+        <div class="container dad" style="width: 100%; padding: 0; position: relative">
+            <h1 class="animated infinite bounce"><p class="signature ">Concesionario</p></h1>           
+            <div class="row" style="float: right;">                
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="grow vertical-tab-1">          
                         <a href=".../clientServlet?action=List"><p class="rotate">Clientes</p></a>

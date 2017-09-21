@@ -23,6 +23,9 @@
                 location.href = "../login.jsp";
             </script>
         </c:if>
+        <form action="../../accountServlet?action=logout" method="post"style="background: transparent; position: absolute; right: 0px;; z-index: 1">
+            <input  value="Salir de sesión"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold; background: #FF6464;">
+        </form>
         <div class="row" style="max-width: 100%">
             <div class="col-md-7" style="margin: 0 auto;">
                 <div class="row">
