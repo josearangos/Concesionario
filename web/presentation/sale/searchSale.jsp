@@ -29,6 +29,7 @@
                 <div class="row row2">
                     <div class="flipkart-navbar-search smallsearch col-xs-12">
                         <div class="row animated bounceInDown">
+                            
                             <div class="col-sm-1 col-xs-1">
                                 <button class="btn btn-warning btn-lg" onclick=" location.href = '../../presentation/menu.jsp'">Menu</button>
                             </div>    
@@ -43,7 +44,6 @@
                                 <button class="btn btn-success btn-lg" onclick="location.href = '../../presentation/sale/newSale.jsp'">Crear Venta</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
