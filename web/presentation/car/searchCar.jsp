@@ -25,6 +25,7 @@
                 <label>${carS.model}</label><p class="card-text"></p>
                 <label>${carS.price}</label><p class="card-text"></p>
                 <label>${carS.plate}</label><p class="card-text"></p> 
+                <img src="${c.photo}">
             </div>
             <hr/>
         </div>
