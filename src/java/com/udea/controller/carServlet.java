@@ -35,11 +35,13 @@ public class carServlet extends HttpServlet {
             switch(action){
                 case "new":
                     Car c = new Car();
+                    System.out.println("-----------------------------------------------------------------------");
+                    System.out.println(request.getParameter("foto"));
                     c.setPlate(request.getParameter("matricula"));
                     c.setBrand(request.getParameter("marca"));
                     c.setModel(Integer.parseInt(request.getParameter("modelo")));
                     c.setPrice(Integer.parseInt(request.getParameter("precio")));
-                    c.setPhoto("auto.jpg");
+                    c.setPhoto(request.getParameter("foto"));
                     carFacade.create(c);
                     break;
                 case "redirectCar":

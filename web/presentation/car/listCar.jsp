@@ -69,7 +69,8 @@
                         <h4 class="card-title"><label>${c.brand}</label></h4>
                         <label>${c.model}</label><p class="card-text"></p>
                         <label>${c.price}</label><p class="card-text"></p>
-                        <label>${c.plate}</label><p class="card-text"></p> 
+                        <label>${c.plate}</label><p class="card-text"></p>
+                        <img src="${c.photo}">
                     </div>
                     <c:if test = "${not empty login}">
                         <div class="card-footer">

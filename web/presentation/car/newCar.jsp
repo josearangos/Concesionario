@@ -53,7 +53,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="filebutton">Foto</label>
                             <div class="col-md-4">
-                                <input id="foto" name="foto" class="input-file" type="file">
+                                <input id="foto" name="foto" class="input-file" type="text" placeholder="Ingrese el link de la foto">
                             </div>
                         </div>
                     </fieldset>
