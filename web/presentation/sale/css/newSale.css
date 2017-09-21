@@ -3,22 +3,19 @@ body{
 	font-family: 'Gloria Hallelujah', cursive;
 }
 
-form{
+.boxForm{
 	border-width: 8px;
 	border-radius: 4px;
 	background-color: #546e7a;
 	color: white;
 	max-width: 700px;
+        margin:0 auto;
+        padding-top:20px;
 }
 
 label{
 	float: left;	
 	width: 10%;
-	font-weight: bold;
-}
-
-input{
-	margin-left: 9%;
 	font-weight: bold;
 }
 
@@ -34,13 +31,9 @@ button{
 	margin-top: 5%;
 }
 
-.form2{
-	padding-bottom: 3%;
-}
-
 .largo{
-	margin-left: 0;
-	font-size: 14px;
 	height: 50px;
-	width: 239px;
+}
+.formButtom {
+    margin-bottom:20px;
 }

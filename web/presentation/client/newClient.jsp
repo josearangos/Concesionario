@@ -22,6 +22,7 @@
 
     <center><legend class="animated  tada"  style="margin-top: 5%; font-size: 45px; color: white;">Concesionario</legend></center>
 
+    
     <center><form class ="form1" action="../../clientServlet?action=new" method="post">
             <fieldset>
                 <c:if test="${param.res==1}">

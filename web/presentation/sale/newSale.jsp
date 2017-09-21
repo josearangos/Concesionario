@@ -37,56 +37,58 @@
                 swal("Se ha registrado la venta exitosamente");
             </script>
         </c:if>   
-        <center>
-              
-            <legend class="animated wobble" style="margin-top: 5%; font-size: 45px; color: white;">
-                CriolloSolutions
-            </legend>
-        </center>
-            <form action="../../accountServlet?action=redirectMenu" method="post" style="background: transparent; margin-top: 10px; margin-left: 20%;">
-                <input  value="Menú"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
-            </form>
-        <center>
-            
-            <form class="animated bounceInDown bounceInLeft form1" action="../../saleServlet?action=new" method="post" style="margin: 2px">
-                <center><legend class="animated bounceInDown fadeInLeft">Crear Cliente</legend></center>
-                <fieldset>
-                    <!--ID del cliente-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label animated infinite bounce" for="ide">ID Cliente</label>  
-                        <div class="col-md-4">
-                            <input id="ide" name="ide" type="text" placeholder="Digite ID" class="form-control input-md" required minlength="9" pattern="[A-Za-z0-9]+">
+        
+            <div class="row" style="max-width: 100%">
+                <div class="col-md-7" style="margin: 0 auto;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <form action="../../accountServlet?action=redirectMenu" method="post" style="background: transparent; margin-top: 10px; margin-left: 20%;">
+                                <input  value="Menú"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+                            </form>
+                        </div>
+                        <div class="col-md-8">
+                            <center>
+                                <legend class="animated wobble" style="margin-top: 5%; font-size: 45px; color: white;">
+                                    CriolloSolutions
+                                </legend>
+                            </center>
                         </div>
                     </div>
-                    <!--Matricula vehiculo-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label animated infinite bounce" for="plate">Matricula</label>  
-                        <div class="col-md-4">
-                            <input id="plate" name="plate" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+"> 
-                        </div>
-                    </div>
-                    <!--Botón de envio al servidor-->
-                    <div class="form-group">  
-                        <div class="col-md-4">
-                            <input  value="Registrar Venta"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-            <form class="animated bounceInDown bounceInRight  form2" action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">                          
-                <!--Botón de envio al servidor-->
-                <div class="form-group">  
-                    <div class="col-md-4">                    
-                        <input  value="Venta con Usuario no registrado"   type="submit"  name="action"  class="largo btn btn-success" style="font-weight: bold; margin-right: 10%">                  
-                    </div>
-            </form>
-        </center>
-        <center>
-            <form id="form2" action="../../saleServlet?action=listSale" method="post">
-                <center><input style="margin-right: 10%" value="Ver Ventas"   type="submit"  name="action"  class="btn btn-success animated  bounceInLeft" style="font-weight: bold;"></center>
-            </form>  
-        </center>
-
+                </div>
+            </div>
+        
+            <div class="boxForm">
+                <center>
+                    <form class="animated bounceInDown bounceInLeft form1" action="../../saleServlet?action=new" method="post" style="margin: 2px">
+                        <legend class="animated bounceInDown fadeInLeft">Crear venta</legend>
+                        <fieldset>
+                            <!--ID del cliente-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label animated infinite bounce" for="ide">ID Cliente</label>  
+                                <div class="col-md-4">
+                                    <input id="ide" name="ide" type="text" placeholder="Digite ID" class="form-control input-md" required minlength="9" pattern="[A-Za-z0-9]+">
+                                </div>
+                            </div>
+                            <!--Matricula vehiculo-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label animated infinite bounce" for="plate">Matricula</label>  
+                                <div class="col-md-4">
+                                    <input id="plate" name="plate" type="text" placeholder="Digite Matricula" class="form-control input-md" minlength="3" required pattern="[A-Za-z0-9]+"> 
+                                </div>
+                            </div>
+                            <!--Botón de envio al servidor-->
+                            <input  value="Registrar Venta"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;margin-bottom:10px;">
+                        </fieldset>
+                    </form>
+                    <form class="animated bounceInDown bounceInRight" action="../../saleServlet?action=redirectNewSaleUserNotRegistre" method="post">                          
+                        <!--Botón de envio al servidor-->                   
+                        <input  value="Venta con usuario no registrado"   type="submit"  name="action"  class="largo btn btn-success formButton" style="font-weight: bold; margin-bottom:10px;">                  
+                    </form>
+                    <form id="form2" action="../../saleServlet?action=listSale" method="post">
+                        <input value="Ver ventas"   type="submit"  name="action"  class="btn btn-success animated  bounceInLeft formButton" style="font-weight: bold;margin-bottom:20px;">
+                    </form>  
+                </center>
+            </div>
 
     </body>
 </html>       
