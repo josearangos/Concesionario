@@ -17,7 +17,24 @@
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     </head>
     <body>
-    <center><legend style="margin-top: 5%; font-size: 45px; color: white;">CriolloSolutions</legend></center>
+    <div class="row" style="max-width: 100%">
+            <div class="col-md-7" style="margin: 0 auto;">
+                <div class="row">
+                    <div class="col-md-2">
+                        <form action="../../accountServlet?action=redirectMenu" method="post" style="background: transparent; margin-top: 10px; margin-left: 20%;">
+                            <input  value="Menú"   type="submit"  name="action"  class="btn btn-success" style="font-weight: bold;">
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <center>
+                            <legend class="animated wobble" style="margin-top: 5%; font-size: 45px; color: white;">
+                                CriolloSolutions
+                            </legend>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
     <center><form action="../../carServlet?action=new" method="post">
             <fieldset>
 
