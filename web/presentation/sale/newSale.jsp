@@ -20,6 +20,12 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
+        <c:if test = "${empty login}">
+            <script>
+                alert("Debe logearse para acceder a esta funcionalidad");
+                location.href="../login.jsp";
+            </script>
+        </c:if>
         <c:if test="${param.res==1}">
             <script>
                 swal("No existe el cliente, favor registrarlo");

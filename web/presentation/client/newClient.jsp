@@ -19,6 +19,12 @@
 
     </head>
     <body>
+        <c:if test = "${empty login}">
+            <script>
+                alert("Debe logearse para acceder a esta funcionalidad");
+                location.href="../login.jsp";
+            </script>
+        </c:if>
 
     <center><legend class="animated  tada"  style="margin-top: 5%; font-size: 45px; color: white;">Concesionario</legend></center>
 

@@ -19,7 +19,12 @@
 
     </head>
     <body>
-
+        <c:if test = "${empty login}">
+            <script>
+                alert("Debe logearse para acceder a esta funcionalidad");
+                location.href="../login.jsp";
+            </script>
+        </c:if>
         <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
         <table class="table table-hover"  id="datos" >
             <thead>

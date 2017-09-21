@@ -22,7 +22,12 @@
 
     </head>
     <body>  
-
+        <c:if test = "${empty login}">
+            <script>
+                alert("Debe logearse para acceder a esta funcionalidad");
+                location.href="../login.jsp";
+            </script>
+        </c:if>
         <div id="flipkart-navbar">
             <div class="container ">
                 <div class="row row1">

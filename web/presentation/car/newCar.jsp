@@ -17,6 +17,12 @@
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     </head>
     <body>
+        <c:if test = "${empty login}">
+            <script>
+                alert("Debe logearse para acceder a esta funcionalidad");
+                location.href="../login.jsp";
+            </script>
+        </c:if>
     <div class="row" style="max-width: 100%">
             <div class="col-md-7" style="margin: 0 auto;">
                 <div class="row">
