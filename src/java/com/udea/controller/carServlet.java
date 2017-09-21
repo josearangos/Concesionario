@@ -42,24 +42,26 @@ public class carServlet extends HttpServlet {
                     c.setPhoto("auto.jpg");
                     carFacade.create(c);
                     break;
+                case "redirectCar":
+                    url = "presentation/car/newCar.jsp";
+                    break;
                 case "redirectLogin":
-                    System.out.println("------------------------------------------------------->");
                     url = "presentation/login.jsp";
                     break;
-                    
+                case "redirectSearchCar":
+                    url = "presentation/car/searchCar.jsp";
+                    break;                    
                 case "list":
                     List<Car> findAll = carFacade.findAll();
                     request.getSession().setAttribute("cars", findAll);
                     url = "presentation/car/listCar.jsp";
-                 break;
-                 
+                 break;               
                 case "delete":
                     String id = request.getParameter("id");
                     Car car = carFacade.find(id);
                     carFacade.remove(car);
                     url = "carServlet?action=list";
-                    break;
-                    
+                    break;                
                 case "update":
                     id = request.getParameter("id");
                     List<Car> lc = new ArrayList<>();
@@ -67,8 +69,7 @@ public class carServlet extends HttpServlet {
                     lc.add(c);
                     request.getSession().setAttribute("cars", lc);
                     url = "presentation/car/editCar.jsp";
-                    break;
-                    
+                    break;                   
                 case "updateCar":                    
                     c = new Car();
                     c.setPlate(request.getParameter("matricula"));
@@ -78,8 +79,18 @@ public class carServlet extends HttpServlet {
                     c.setPrice(Integer.parseInt(request.getParameter("precio")));
                     c.setPhoto("hola.jpg");
                     carFacade.edit(c);
-                    url = "presentation/car/editCar.jsp?res=1";
-                    
+                    url = "presentation/car/editCar.jsp?res=1";                   
+                    break;
+                case "searchCar":                    
+                    String plate = request.getParameter("plate");
+                    boolean checkPlate = carFacade.checkPlate(plate);
+                    if(!checkPlate){
+                        url = "presentation/car/listCar.jsp?res=1";
+                    }else{
+                        Car carS = carFacade.find(plate);
+                        request.getSession().setAttribute("carS", carS);
+                        url = "presentation/car/searchCar.jsp";
+                    }                                    
                     break;
             }
 

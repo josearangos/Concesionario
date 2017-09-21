@@ -22,7 +22,6 @@
     <body>  
         <c:if test = "${empty login}">
             <script>
-                alert("Debe logearse para acceder a esta funcionalidad");
                 location.href="../login.jsp";
             </script>
         </c:if>

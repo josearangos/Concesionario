@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <body>
-
+        
         <video id="video-background" width="560" height="315" autoplay preload muted loop>
             <source src="voiture.mp4" type='video/mp4; codecs="avc1,mp4a"' />
             <source src="voiture.ogv" type='video/ogg; codecs="theora,vorbis"' />

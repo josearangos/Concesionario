@@ -71,6 +71,9 @@ public class accountServlet extends HttpServlet {
                 case "redirectMenu":
                     url = "presentation/menu.jsp";
                     break;
+                case "redirectLogin":
+                    url = "presentation/login.jsp";
+                    break;
             }
             response.sendRedirect(url);            
         }finally{

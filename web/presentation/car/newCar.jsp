@@ -19,7 +19,6 @@
     <body>
         <c:if test = "${empty login}">
             <script>
-                alert("Debe logearse para acceder a esta funcionalidad");
                 location.href="../login.jsp";
             </script>
         </c:if>
@@ -46,13 +45,10 @@
         </div>
     <center><form action="../../carServlet?action=new" method="post">
             <fieldset>
-
                 <!-- Form Name -->
                 <legend>Crear Vehiculo</legend>
-
                 <div>
                     <fieldset>
-
                         <!-- File Button --> 
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="filebutton">Foto</label>
@@ -60,7 +56,6 @@
                                 <input id="foto" name="foto" class="input-file" type="file">
                             </div>
                         </div>
-
                     </fieldset>
                 </div>
 
